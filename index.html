@@ -587,147 +587,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/25/坑总是接二连三的来让你踩/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="杨小白">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="在树上的小白">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/25/坑总是接二连三的来让你踩/" itemprop="url">
-                  坑总是接二连三的来让你踩
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-25T21:42:44+08:00">
-                2016-10-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2016/10/25/坑总是接二连三的来让你踩/" class="leancloud_visitors" data-flag-title="坑总是接二连三的来让你踩">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          bug总是不单行我突然悟到了，bug（坑）总不会只有一个，它肯定会接二连三的来，折腾的你欲仙欲死。
-昨晚写了个关于Fragment的demo，然后有一个关于适配平板和手机的问题。
-
-第一个bug是getView方法中的TextView抛了空指针异常，找了找应该是view为空，然后看到convertV
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/10/25/坑总是接二连三的来让你踩/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/30/Sqlite/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -751,7 +610,7 @@
               
                 
                 <a class="post-title-link" href="/2016/07/30/Sqlite/" itemprop="url">
-                  Sqlite
+                  Android Sqlite的使用
                 </a>
               
             
@@ -767,7 +626,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-30T21:07:24+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-30T21:07:00+08:00">
                 2016-07-30
               </time>
             
@@ -778,6 +637,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -785,7 +666,7 @@
 
           
           
-             <span id="/2016/07/30/Sqlite/" class="leancloud_visitors" data-flag-title="Sqlite">
+             <span id="/2016/07/30/Sqlite/" class="leancloud_visitors" data-flag-title="Android Sqlite的使用">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -816,9 +697,9 @@
       
         
           
-          在android中使用sqlite数据库之小白的理解笔记1.MyOpenHelper帮助类Create a helper object to create, open, and/or manage a database.利用这个帮助类来创建打开和管理数据库
+          1.MyOpenHelper帮助类Create a helper object to create, open, and/or manage a database.利用这个帮助类来创建打开和管理数据库
 
-新建一个项目，同时新建一个类MyOpen
+新建一个项目，同时新建一个类MyOpenHelper继承SQLiteOpenHelper，实现两
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -904,7 +785,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -915,7 +796,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
