@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>坑总是接二连三的来让你踩 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="bug总是不单行我突然悟到了，bug（坑）总不会只有一个，它肯定会接二连三的来，折腾的你欲仙欲死。 昨晚写了个关于Fragment的demo，然后有一个关于适配平板和手机的问题。  第一个bug是getView方法中的TextView抛了空指针异常，找了找应该是view为空，然后看到convertView判断条件的时候写的是convertView ！= null时才去加载view对象，而我是初次运">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="坑总是接二连三的来让你踩">
+<meta property="og:url" content="http://yoursite.com/2016/10/25/坑总是接二连三的来让你踩/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="bug总是不单行我突然悟到了，bug（坑）总不会只有一个，它肯定会接二连三的来，折腾的你欲仙欲死。 昨晚写了个关于Fragment的demo，然后有一个关于适配平板和手机的问题。  第一个bug是getView方法中的TextView抛了空指针异常，找了找应该是view为空，然后看到convertView判断条件的时候写的是convertView ！= null时才去加载view对象，而我是初次运">
+<meta property="og:image" content="http://i.imgur.com/tjn6CD9.png">
+<meta property="og:image" content="http://i.imgur.com/Ol2RT7K.jpg">
+<meta property="og:updated_time" content="2016-10-25T13:48:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="坑总是接二连三的来让你踩">
+<meta name="twitter:description" content="bug总是不单行我突然悟到了，bug（坑）总不会只有一个，它肯定会接二连三的来，折腾的你欲仙欲死。 昨晚写了个关于Fragment的demo，然后有一个关于适配平板和手机的问题。  第一个bug是getView方法中的TextView抛了空指针异常，找了找应该是view为空，然后看到convertView判断条件的时候写的是convertView ！= null时才去加载view对象，而我是初次运">
+<meta name="twitter:image" content="http://i.imgur.com/tjn6CD9.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-坑总是接二连三的来让你踩" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/25/坑总是接二连三的来让你踩/" class="article-date">
+  <time datetime="2016-10-25T13:42:44.000Z" itemprop="datePublished">2016-10-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      坑总是接二连三的来让你踩
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="bug总是不单行"><a href="#bug总是不单行" class="headerlink" title="bug总是不单行"></a>bug总是不单行</h2><p><strong>我突然悟到了，bug（坑）总不会只有一个，它肯定会接二连三的来，折腾的你欲仙欲死</strong>。</p>
+<p>昨晚写了个关于Fragment的demo，然后有一个关于适配平板和手机的问题。</p>
+<ul>
+<li><p>第一个bug是getView方法中的TextView抛了空指针异常，找了找应该是view为空，然后看到convertView判断条件的时候写的是convertView ！= null时才去加载view对象，而我是初次运行，不存在缓存，找不到这个view对象不能找到textview就会抛异常。</p>
+<pre><code>//对的代码应该是这样的，可能写的时候不小心写反了。
+public View getView(int position, View convertView, ViewGroup parent) {
+    News news = getItem(position);
+    View view;
+    if (convertView == null){
+        view = LayoutInflater.from(getContext()).inflate(resourceId,null);
+    }
+    else {
+        view = convertView;
+    }
+    TextView newsTitleText = (TextView) view.findViewById(R.id.news_title_item);//这里抛了空指针异常
+    newsTitleText.setText(news.getTitle());
+    return view;
+</code></pre><p>  }</p>
+</li>
+<li><p>第二个bug好吧好像也不算是bug，就是坑。是关于限定符的，看书上是建立一个layout-sw600dp的文件夹，然后在这个文件夹下面新建一个main_activity.xml，如果模拟器的最低宽度为600dp，则显示这个文件夹下的布局。然后我就去开开心心的建了。</p>
+<ul>
+<li>一开始我是在android视图下的（用的是AS），然后建了之后发现没找到那个文件夹，第二次建却说我已经有那个文件夹存在，好郁闷，然后切换到了project下了，终于找到了。</li>
+<li>然后~怎么建都会跑到默认目录layout下面，这特么的，后来切换到了package视图下，才建好了。eclipse好像可以更改默认目录吧，还不知道AS要怎么弄，以后再来补充。（<strong>ps：限定符的使用要在android3.2开始才能用</strong>）</li>
+</ul>
+</li>
+<li><p>第三个坑，后来终于写好了代码，然后在夜神模拟器中运行（1280*720）的，却发现并没有显示我想要的布局，在网上找了好久也没发现什么错误。。然后想是不是这个模拟器的问题。。然后我就去打开genymotion。。。打不开了！！！我的妈啊，是不是我太久没有用模拟器了，错误是这样的。<br><img src="http://i.imgur.com/tjn6CD9.png" alt=""><br>提示说不能打开virtualbox，然后我就去打开了。。发现真打不开。。怎么点击都没有反应（内心一万头草泥马路过，上次还是好好的啊，是我太久没有宠幸你了吗，你不爱我了对不对，可我还爱你啊）。怎么办咩，本来就被折腾的好烦了，就直接卸载重装了。重装以后就好了，花了点时间而已。预期和我想象的一样。那就是夜神模拟器的问题咯，别问我为什么不用真机，我没钱买平板。。。</p>
+</li>
+<li>第四个bug，欲哭无泪，发现我画的虚线没显示出来，应该是模拟器显示出来的颜色跟我在AS预览的颜色不一样，就没发现那根虚线。。然后改了下颜色，可以显示出来了。可视化不是虚线，是实线，而且不是我要的那种颜色（宝宝心里哭）<br><img src="http://i.imgur.com/Ol2RT7K.jpg" alt=""></li>
+</ul>
+<p>代码是这样的。</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; android:shape=&quot;line&quot;&gt;
+    &lt;stroke android:width=&quot;1dp&quot;
+        android:color=&quot;#d41b1b&quot;//这个颜色是红色，然后显示的是灰白色
+        android:dashWidth=&quot;5dp&quot;
+        android:dashGap=&quot;5dp&quot; /&gt;//这里有虚线间隔，却没显示出来。
+&lt;/shape&gt;
+</code></pre><ul>
+<li>对了，还有第五个坑。遇到前面这么多乱七八糟的东西，我就想记录下来。然后进我的hexo博客。。。发现怎么都进不去。。loaclhost://4000也进不去，后来重装了server，啊啊啊这个我不懂，男票弄好的，后来告诉我说用域名进博客的时候要<a href="https://yangyouqian.github.io/" target="_blank" rel="external">https://yangyouqian.github.io/</a>    这样子，是https，不是http。折腾的我心好累。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/25/坑总是接二连三的来让你踩/" data-id="cj1ox8n4a0003wkvieli7ez35" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/30/Sqlite/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Sqlite
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/11/03/android-Dalvik/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">android Dalvik</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/04/19/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/03/android-Dalvik/">android Dalvik</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/25/坑总是接二连三的来让你踩/">坑总是接二连三的来让你踩</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/30/Sqlite/">Sqlite</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
