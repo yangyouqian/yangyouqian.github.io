@@ -280,6 +280,166 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/19/TabLayout/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="杨小白">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="在树上的小白">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/19/TabLayout/" itemprop="url">
+                  TabLayout
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-19T21:50:04+08:00">
+                2017-04-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android-UI/" itemprop="url" rel="index">
+                    <span itemprop="name">Android UI</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/04/19/TabLayout/" class="leancloud_visitors" data-flag-title="TabLayout">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/19/TabLayout/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/03/android-Dalvik/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -368,8 +528,8 @@
       
         
           
-            <p>目录：</p>
-<pre><code>//Dalvik虚拟机的一些知识
+          目录：
+//Dalvik虚拟机的一些知识
 1. 反编译的一些小知识
 2. Dalvik虚拟机与java虚拟机的区别
 3. Dalvik指令集
@@ -377,115 +537,15 @@
 5. Dalvik的两种寄存器表示方法——v和p命名法
 6. Dalvik字节码的类型、方法之小白记忆
 7. 指令特点
-</code></pre><h2 id="反编译的一些小知识"><a href="#反编译的一些小知识" class="headerlink" title="反编译的一些小知识"></a>反编译的一些小知识</h2><ul>
-<li>Android程序中的String字符串都有唯一的int类型索引值，反编译后，所有的索引值保存在string.xml文件同目录的public.xml文件中</li>
-<li>在smail文件中，注释以#开头</li>
-</ul>
-<h2 id="Dalvik虚拟机与java虚拟机的区别"><a href="#Dalvik虚拟机与java虚拟机的区别" class="headerlink" title="Dalvik虚拟机与java虚拟机的区别"></a>Dalvik虚拟机与java虚拟机的区别</h2><ol>
-<li><p>java虚拟机运行的是java字节码，Dalvik虚拟机运行的是Dalvik字节码</p>
-<pre><code>java字节码--编译&gt;生成class文件
-java虚拟机通过解码class文件中的内容来运行程序
-
-java字节码--转换&gt;Dalvik字节码--打包&gt;--DEX（Dalvik Excutable）可执行文件
-Dalvik虚拟机通过解释DEX文件来执行这些字节码
-</code></pre></li>
-<li><p>Dalvik可执行文件体积更小</p>
-<p> Android SDK中的dx工具负责将 java字节码–转换&gt;Dalvik字节码</p>
-<p> dx工具对java类文件重新排列，消除在类文件中出现的所有冗余信息</p>
-<p> 例如在不同类文件中，有多个类引用了相同的方法签名和字符串常量，<br> 这些冗余信息会直接增加文件的体积，也会影响虚拟机解析文件的效率。</p>
-<p> dx工具针对这个问题专门做了处理<strong>，它会将所有的java类文件中的常量池进行分解，<br> 重新组合形成一个常量池，所有的类文件共享同一个常量池。</strong></p>
-</li>
-<li><p>java虚拟机与Dalvik虚拟机架构不同</p>
-<p> java虚拟机基于栈架构。</p>
-<pre><code>程序在运行时虚拟机需要频繁的从栈上读取或写入数据，
-需要更多指令分派和内存访问次数，会消耗CPU时间。
-</code></pre><p> Dalvik虚拟机基于寄存器架构。</p>
-<pre><code>数据的访问通过寄存器间直接传递，比栈方式快很多。
-</code></pre><p> java虚拟机的指令集被称为<strong>零地址形式</strong>（指令的源参数与目标参数都是隐含的，通过java虚拟机中提供的一种数据结构“求值栈”来传递）的指令集。</p>
-<p> 以下是java文件编译后的class文件，再生成的dex文件再用javap反编译后的java字节码:</p>
-<pre><code>load系列：  iload_1  下划线左边i是指令前缀，表示操作类型为int类型，
-load表示将局部变量存入java栈。（类似的还有lload,fload,dload），
-下划线右边的数字表示要操作局部变量区的哪个局部变量，索引值从0开始计数，
-iload1表示将第二个int类型的局部变量进栈，如下图的局部变量区的 5
-</code></pre><p><img src="http://i.imgur.com/gZLeoWI.png" alt=""></p>
-<pre><code>iadd/isub/imul 从栈顶弹出两个int类型的值，将值相加/减/乘，然后把结果压回栈顶。
-</code></pre><p> 基于寄存器架构的Dalvik虚拟机与基于栈架构的java虚拟机相比，生成的代码指令少，程序执行速度更快。</p>
-</li>
-</ol>
-<h2 id="Dalvik指令集"><a href="#Dalvik指令集" class="headerlink" title="Dalvik指令集"></a>Dalvik指令集</h2><h3 id="Dalvik指令格式"><a href="#Dalvik指令格式" class="headerlink" title="Dalvik指令格式"></a>Dalvik指令格式</h3><p>指令语法由指令的<strong>位描述</strong>与<strong>指令格式标识</strong>来决定</p>
-<ul>
-<li><p>位描述</p>
-<ul>
-<li>每16位的字采用空格分隔开来</li>
-<li>每个字母表示四位，<strong>每个字母按顺序从高字节开始，排列到低字节</strong>。每4位之间可能使用竖线 “ | ” 来表示不同的内容</li>
-<li>顺序采用 A~Z 的单个大写字母作为一个4位的操作码，<strong>op表示一个8位的操作码</strong></li>
-<li>“空集符号” 来表示这字段所有位为0值</li>
-</ul>
-</li>
-<li><p>指令格式标识</p>
-<ul>
-<li>指令格式标识大多由三个字符组成，前两个是数字，最后一个是字母】</li>
-<li>第一个数字是表示指令有多少个16位的字组成</li>
-<li>第二个数字是表示指令最多使用寄存器的个数。特殊标识 “r” 使用一定范围内的寄存器</li>
-<li>第三个字母为类型码，表示指令用到的<strong>额外数据</strong>的类型（x为无额外数据）</li>
-</ul>
-</li>
-<li><p>语法的一些约定</p>
-<ul>
-<li>每条指令从操作码开始，后面紧跟参数，个数不定，参数之间用逗号隔开</li>
-<li>参数若为：“vX” 表明它是一个寄存器，如v0，v1</li>
-<li>参数若为：“#+X” 表明它是一个常量数字</li>
-<li>参数若为：“+X” 表明它是一个相对指令的地址偏移</li>
-<li>参数若为：“kind@X” 表明它是一个常量池索引值。（kind表示常量池类型，string字符串/type类型/field字段/meth方法）</li>
-</ul>
-</li>
-</ul>
-<h2 id="DEX文件反汇编工具"><a href="#DEX文件反汇编工具" class="headerlink" title="DEX文件反汇编工具"></a>DEX文件反汇编工具</h2><ul>
-<li>BakSmail –&gt;.smail  (更受欢迎)</li>
-<li>Dedexer  –&gt;.ddx</li>
-</ul>
-<h2 id="Dalvik的两种寄存器表示方法——v和p命名法"><a href="#Dalvik的两种寄存器表示方法——v和p命名法" class="headerlink" title="Dalvik的两种寄存器表示方法——v和p命名法"></a>Dalvik的两种寄存器表示方法——v和p命名法</h2><p>若一个函数使用到M个寄存器，并且该函数有N个参数，规定，局部变量使用从v0开始的前M-N个寄存器，参数使用最后的N个寄存器。</p>
-<ul>
-<li>v命名法采用以小写字母v开头表示函数中用到的局部变量与参数，所有的寄存器命名从v0开始，依次递增。</li>
-<li>p命名法：对局部变量寄存器明明无影响，函数中引入的参数命名从p0开始，依次递增。</li>
-</ul>
-<h2 id="Dalvik字节码的类型、方法之小白记忆"><a href="#Dalvik字节码的类型、方法之小白记忆" class="headerlink" title="Dalvik字节码的类型、方法之小白记忆"></a>Dalvik字节码的类型、方法之小白记忆</h2><h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><pre><code>* 引用类型
-    * 对象
-    * 数组
-* 基本类型
-    * 其他的java类型
-</code></pre><p>V – void、B – byte、S – short、C – char、I – int、F – float、D – double、</p>
-<p>以上都是以原来的类型单词的<strong>首字母大写</strong>构成的，然后还有一些是酱紫的</p>
-<p>Z – boolean 、J – long、<strong>L – java类类型</strong>、<strong>[ – 数组类型</strong> 、</p>
-<pre><code>boolean：布尔值，值为true/false，真和假，真就是Zhen，也就是Z啦
-这个long还真不好记忆，死背啦
-
-L：可以表示java类型中的任何类。
-表示方式为：Lpackage/name/ObjectName;(注意最后面有个分号)
-例：Ljava/lang/String;  相当于java.lang.String 
-
-[ ：数组类型 就是java里表示数组那个符号的一半。
-[后面紧跟基本类型描述符。
-例：[I   表示int[]  [[I 表示int[][],[Ljava/lang/String 表示String[]
-    注：多维数组最大维数为255
-</code></pre><p>上面这几个是比较奇葩的，要另外记忆，小心不要搞混了嗷。</p>
-<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>Dalvik使用方法名、类型参数与返回值来详细描述一个方法。</p>
-<p>格式为：方法名(参数类型)返回值类型</p>
-<pre><code>例: 
-method(I[[IILjava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-java中为:String method(int, int[][], int, String, Object[])
-</code></pre><p>BakSmail生成的方法代码以.method指令开始，以.end method指令结束，根据方法类型的不同，在方法指令开始前可能会用 # 注释。</p>
-<h2 id="指令特点"><a href="#指令特点" class="headerlink" title="指令特点"></a>指令特点</h2><p>先来看一个例子，直接看理论不便理解</p>
-<pre><code>”move-wide/from16 vAA,vBBBB“
-</code></pre><ol>
-<li>参数采用<strong>从目的到源</strong>的方式，如上，vAA为目的寄存器，vBBBB为源寄存器。</li>
-<li>根据字节码的大小和类型不同，一些字节码添加了<strong>名称后缀</strong>。64位常规类型的字节码添加 -wide后缀。如上，move-wide为名称后缀，标识指令操作的数据宽度为64位。特殊类型的字节码根据具体类型添加后缀。（-boolean,-byte,-char,-short,-int,-long,-float,-double,-object,-string,-class,-void）。</li>
-<li>根据字节码的布局与选项不同，一些字节码添加了<strong>字节码后缀</strong>以消除歧义。这些后缀通过在字节码主名称后添加斜杠”/“来分隔开。如上的wide和from16就是用/隔开的。from16 是字节码后缀。标识源为一个16位的寄存器引用变量。</li>
-<li>每个字母表示宽度为4位。如上， vAA取值范围为v0~v255(两个字母，8位，0~2的8次方-1)，vBBBB取值范围为v0~v65535。</li>
-</ol>
-<p>Dalvik指令集大多数指令用寄存器作为目的操作数或源操作数。一个字母表示0~15的数值或v0~v255的寄存器。</p>
-
-          
+反编译的一
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/11/03/android-Dalvik/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -615,48 +675,18 @@ java中为:String method(int, int[][], int, String, Object[])
       
         
           
-            <h2 id="bug总是不单行"><a href="#bug总是不单行" class="headerlink" title="bug总是不单行"></a>bug总是不单行</h2><p><strong>我突然悟到了，bug（坑）总不会只有一个，它肯定会接二连三的来，折腾的你欲仙欲死</strong>。</p>
-<p>昨晚写了个关于Fragment的demo，然后有一个关于适配平板和手机的问题。</p>
-<ul>
-<li><p>第一个bug是getView方法中的TextView抛了空指针异常，找了找应该是view为空，然后看到convertView判断条件的时候写的是convertView ！= null时才去加载view对象，而我是初次运行，不存在缓存，找不到这个view对象不能找到textview就会抛异常。</p>
-<pre><code>//对的代码应该是这样的，可能写的时候不小心写反了。
-public View getView(int position, View convertView, ViewGroup parent) {
-    News news = getItem(position);
-    View view;
-    if (convertView == null){
-        view = LayoutInflater.from(getContext()).inflate(resourceId,null);
-    }
-    else {
-        view = convertView;
-    }
-    TextView newsTitleText = (TextView) view.findViewById(R.id.news_title_item);//这里抛了空指针异常
-    newsTitleText.setText(news.getTitle());
-    return view;
-</code></pre><p>  }</p>
-</li>
-<li><p>第二个bug好吧好像也不算是bug，就是坑。是关于限定符的，看书上是建立一个layout-sw600dp的文件夹，然后在这个文件夹下面新建一个main_activity.xml，如果模拟器的最低宽度为600dp，则显示这个文件夹下的布局。然后我就去开开心心的建了。</p>
-<ul>
-<li>一开始我是在android视图下的（用的是AS），然后建了之后发现没找到那个文件夹，第二次建却说我已经有那个文件夹存在，好郁闷，然后切换到了project下了，终于找到了。</li>
-<li>然后~怎么建都会跑到默认目录layout下面，这特么的，后来切换到了package视图下，才建好了。eclipse好像可以更改默认目录吧，还不知道AS要怎么弄，以后再来补充。（<strong>ps：限定符的使用要在android3.2开始才能用</strong>）</li>
-</ul>
-</li>
-<li><p>第三个坑，后来终于写好了代码，然后在夜神模拟器中运行（1280*720）的，却发现并没有显示我想要的布局，在网上找了好久也没发现什么错误。。然后想是不是这个模拟器的问题。。然后我就去打开genymotion。。。打不开了！！！我的妈啊，是不是我太久没有用模拟器了，错误是这样的。<br><img src="http://i.imgur.com/tjn6CD9.png" alt=""><br>提示说不能打开virtualbox，然后我就去打开了。。发现真打不开。。怎么点击都没有反应（内心一万头草泥马路过，上次还是好好的啊，是我太久没有宠幸你了吗，你不爱我了对不对，可我还爱你啊）。怎么办咩，本来就被折腾的好烦了，就直接卸载重装了。重装以后就好了，花了点时间而已。预期和我想象的一样。那就是夜神模拟器的问题咯，别问我为什么不用真机，我没钱买平板。。。</p>
-</li>
-<li>第四个bug，欲哭无泪，发现我画的虚线没显示出来，应该是模拟器显示出来的颜色跟我在AS预览的颜色不一样，就没发现那根虚线。。然后改了下颜色，可以显示出来了。可视化不是虚线，是实线，而且不是我要的那种颜色（宝宝心里哭）<br><img src="http://i.imgur.com/Ol2RT7K.jpg" alt=""></li>
-</ul>
-<p>代码是这样的。</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; android:shape=&quot;line&quot;&gt;
-    &lt;stroke android:width=&quot;1dp&quot;
-        android:color=&quot;#d41b1b&quot;//这个颜色是红色，然后显示的是灰白色
-        android:dashWidth=&quot;5dp&quot;
-        android:dashGap=&quot;5dp&quot; /&gt;//这里有虚线间隔，却没显示出来。
-&lt;/shape&gt;
-</code></pre><ul>
-<li>对了，还有第五个坑。遇到前面这么多乱七八糟的东西，我就想记录下来。然后进我的hexo博客。。。发现怎么都进不去。。loaclhost://4000也进不去，后来重装了server，啊啊啊这个我不懂，男票弄好的，后来告诉我说用域名进博客的时候要<a href="https://yangyouqian.github.io/" target="_blank" rel="external">https://yangyouqian.github.io/</a>    这样子，是https，不是http。折腾的我心好累。</li>
-</ul>
+          bug总是不单行我突然悟到了，bug（坑）总不会只有一个，它肯定会接二连三的来，折腾的你欲仙欲死。
+昨晚写了个关于Fragment的demo，然后有一个关于适配平板和手机的问题。
 
-          
+第一个bug是getView方法中的TextView抛了空指针异常，找了找应该是view为空，然后看到convertV
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/10/25/坑总是接二连三的来让你踩/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -786,173 +816,17 @@ public View getView(int position, View convertView, ViewGroup parent) {
       
         
           
-            <h2 id="在android中使用sqlite数据库之小白的理解笔记"><a href="#在android中使用sqlite数据库之小白的理解笔记" class="headerlink" title="在android中使用sqlite数据库之小白的理解笔记"></a>在android中使用sqlite数据库之小白的理解笔记</h2><h4 id="1-MyOpenHelper帮助类"><a href="#1-MyOpenHelper帮助类" class="headerlink" title="1.MyOpenHelper帮助类"></a>1.MyOpenHelper帮助类</h4><p><strong>Create a helper object to create, open, and/or manage a database</strong>.利用这个帮助类来创建打开和管理数据库</p>
-<ul>
-<li><p>新建一个项目，同时新建一个类MyOpenHelper继承SQLiteOpenHelper，实现两个方法和构造函数。</p>
-<pre><code>public class MyOpenHelper extends SQLiteOpenHelper {
-    public MyOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
-    }
+          在android中使用sqlite数据库之小白的理解笔记1.MyOpenHelper帮助类Create a helper object to create, open, and/or manage a database.利用这个帮助类来创建打开和管理数据库
 
-    @Override
-    public void onCreate(SQLiteDatabase db) 
-        //这个方法会在数据库被创建时调用
-        //可以在里面实现创建表
-        db.execSQL(&quot;create table clothes(_id integer primary key autoincrement,
-                                        type char(20), price char(10),
-                                        storage integer(15))&quot;);
-
-    }
-
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        //这个方法会在数据库被更新的时候调用
-        //可以在里面实现列的添加或者修改表名
-    }
-</code></pre><p>  }</p>
-<ul>
-<li><strong>db.execSQL(String sql)</strong>方法： 执行sql语句，不会返回数据。</li>
-<li>文档中的解释：<br><strong>Execute a single SQL statement that is NOT a SELECT or any other SQL statement that returns data.</strong><ul>
-<li><strong>sqlite创建表的语句</strong>：</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<pre><code>create table table_name(
-   column1 datatype  PRIMARY KEY(one or more columns),
-   column2 datatype,
-   column3 datatype,
-   .....
-   columnN datatype,
-);
-//create table 是告诉数据库系统创建一个新表的关键字。
-//create table 语句后跟着表的唯一的名称或标识。
-</code></pre><h4 id="2-在Android-Studio单元测试框架中进行数据库的增删改查"><a href="#2-在Android-Studio单元测试框架中进行数据库的增删改查" class="headerlink" title="2.在Android Studio单元测试框架中进行数据库的增删改查"></a>2.在Android Studio单元测试框架中进行数据库的增删改查</h4><p><img src="http://i.imgur.com/GxTjqBe.png" alt=""></p>
-<p>我用的是AS2.1.1版本，在ApplicationTest中<br>创建方法<strong>public void test()</strong>,在test方法中编写测试代码，然后再右键test方法运行即可。</p>
-<h5 id="两个测试框架中的方法"><a href="#两个测试框架中的方法" class="headerlink" title="两个测试框架中的方法"></a>两个测试框架中的方法</h5><pre><code>//测试框架初始化完毕之后，在测试方法执行之前，此方法调用
-    @Override
-    protected void setUp() throws Exception {
-        super.setUp();
-        oh = new MyOpenHelper(getContext(), &quot;shop.db&quot;, null, 2);
-        db = oh.getWritableDatabase();//获取到数据库对象
-    }
-//测试框架测试方法运行完毕之后，此方法调用
-@Override
-    protected void tearDown() throws Exception {
-        super.tearDown();
-    }
-</code></pre><ul>
-<li><p>这里new出MyOpenHelper帮助类的时候传入的参数：</p>
-<ul>
-<li><strong>getContext()</strong>:获得一个虚拟的上下文。<ul>
-<li>to use to open or create the database</li>
-</ul>
-</li>
-<li><strong>“shop.db”</strong>：创建的数据库表名</li>
-<li><strong>null(factory)：</strong>传null表示使用默认的。<ul>
-<li>to use for creating cursor objects, or null for the default</li>
-</ul>
-</li>
-<li><strong>2/版本号</strong>：至少为1。<ul>
-<li>number of the database (starting at 1); </li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>getWritableDatabase()</strong>：用来创建或者打开数据库，如果数据库不存在就创建一个可读可写的数据库，存在就打开。</p>
-<ul>
-<li>Create and/or open a database that will be used for reading and writing.</li>
-</ul>
-</li>
-<li>还有一个<strong>getReadableDatabase()</strong>方法，差别在于，如果存储空间满了，那么返回只读数据库对象，其他与getWritableDatabase()一样。</li>
-</ul>
-<h4 id="增删改查第一种方法之直接执行sqlite语句"><a href="#增删改查第一种方法之直接执行sqlite语句" class="headerlink" title="增删改查第一种方法之直接执行sqlite语句"></a>增删改查第一种方法之直接执行sqlite语句</h4><ul>
-<li><p><strong>insert</strong>：</p>
-<pre><code>public void insert(String type, String price, int storage){
-    //?：占位符
-        db.execSQL(&quot;insert into clothes (type, price, storage)values(?, ?, ?)&quot;,
-            new Object[]{type, price, storage});//传入需要插入的值
-    }
-</code></pre></li>
-</ul>
-<ul>
-<li><p><strong>delete</strong>:</p>
-<pre><code>public void delete(String type){
-    db.execSQL(&quot;delete from clothes where type = ?&quot;, new Object[]{type});
-}
-</code></pre></li>
-<li><p><strong>update</strong>:</p>
-<pre><code>public void update(){
-        db.execSQL(&quot;update clothes set _id = ? where type = ?&quot;,
-                 n ew Object[]{3 , &quot;内裤&quot;});
-}
-</code></pre></li>
-<li><p><strong>select</strong>:</p>
-<pre><code>public void select(){
-    Cursor cursor = db.rawQuery(&quot;select type, price from clothes&quot;, null);
-    while (cursor.moveToNext()){
-        String type = cursor.getString(cursor.getColumnIndex(&quot;type&quot;));
-        String price = cursor.getString(cursor.getColumnIndex(&quot;price&quot;));
-        System.out.println(type+&quot;;&quot;+price);
-    }
-    }
-
-//查询方法和之前的有点不一样，是用rawQuery()方法执行提供的sql语句，然后返回一个Cursor对象
- Runs the provided SQL and returns a Cursor over the result set
-</code></pre><h4 id="增删改查第二张方法之调用API"><a href="#增删改查第二张方法之调用API" class="headerlink" title="增删改查第二张方法之调用API"></a>增删改查第二张方法之调用API</h4><p>调用API方法来进行增删改查，因为方法会返回一些数据，可以通过判断返回的数据是否等于想要得到的效果来编写相应的逻辑代码，可以防止因sql的语句出现错误导致的bug，不过实际上调用的API方法是系统封装好了的，底层还是在拼接sql语句并执行。</p>
-</li>
-<li><p><strong>insert</strong>：</p>
-<pre><code>&gt; public long insert (String table, String nullColumnHack, ContentValues values)
-</code></pre></li>
-</ul>
-<p><strong>return</strong>:the row ID of the newly inserted row, or -1 if an error occurred<br>这个方法会返回插入的行数，如果没有插入成功则返回-1</p>
-<p><em>nullColumnHack</em>:只有在插入的values都为空的时候才用的上,基本上用不上</p>
-<blockquote>
-<p> 文档解释：If your provided values is empty, no column names are known and an empty row can’t be inserted. If not set to null, the nullColumnHack parameter provides the name of nullable column name to explicitly insert a NULL into in the case where your values is empty.</p>
-</blockquote>
-<pre><code>public void insertByAPI(){
-    ContentValues values = new ContentValues();
-    //ContentValues is used to store a set of values。存储键值对
-    values.put(&quot;type&quot;,&quot;内裤&quot;);
-    //put(key, value);前面这个key一定要是表列名，后面是要插入的值
-    values.put(&quot;storage&quot;, &quot;20&quot;);
-    values.put(&quot;price&quot;, 23);
-    db.insert(&quot;clothes&quot;, null, values);
-}
-</code></pre><ul>
-<li><p><strong>delete</strong>：</p>
-<pre><code>public int deleteByAPI(){
-    int i = db.delete(&quot;clothes&quot;,&quot;type = ? and _id = ?&quot;, 
-                        new String[]{&quot;中裤&quot;,&quot;3&quot;});
-    return i;
-}
-</code></pre></li>
-<li><p><strong>update:</strong></p>
-<pre><code>public void updateByAPI(){
-    ContentValues values = new ContentValues();
-    values.put(&quot;type&quot;, &quot;上衣&quot;);
-    db.update(&quot;clothes&quot;, values, &quot;_id = ?&quot;, new String[]{&quot;2&quot;});
-}
-</code></pre></li>
-<li><p><strong>select:</strong></p>
-<pre><code>public void selectByAPI(){
-    Cursor cursor = db.query(&quot;clothes&quot;,null,null, null,null,null,null,null);
-    while (cursor.moveToNext()){
-        String type = cursor.getString(cursor.getColumnIndex(&quot;type&quot;));
-        String price = cursor.getString(cursor.getColumnIndex(&quot;price&quot;));
-        System.out.println(type+&quot;;&quot;+price);
-    }
-}
-</code></pre></li>
-</ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h6 id="sqlite是一个轻量级的数据库，内置于android应用中，会随着app的卸载而不存在。由于内存很小，所以也舍弃了一些功能，比如不会检查类型是否对应，插入数据时，integer类型可以插入char类型当中。"><a href="#sqlite是一个轻量级的数据库，内置于android应用中，会随着app的卸载而不存在。由于内存很小，所以也舍弃了一些功能，比如不会检查类型是否对应，插入数据时，integer类型可以插入char类型当中。" class="headerlink" title="sqlite是一个轻量级的数据库，内置于android应用中，会随着app的卸载而不存在。由于内存很小，所以也舍弃了一些功能，比如不会检查类型是否对应，插入数据时，integer类型可以插入char类型当中。"></a>sqlite是一个轻量级的数据库，内置于android应用中，会随着app的卸载而不存在。由于内存很小，所以也舍弃了一些功能，比如不会检查类型是否对应，插入数据时，integer类型可以插入char类型当中。</h6><h5 id="总的来说，在android中使用sqlite，需要先建一个帮助类在完成数据库的创建和打开，管理。然后通过getWritableDatabase-获取数据库，然后对其进行增删改查操作。"><a href="#总的来说，在android中使用sqlite，需要先建一个帮助类在完成数据库的创建和打开，管理。然后通过getWritableDatabase-获取数据库，然后对其进行增删改查操作。" class="headerlink" title="总的来说，在android中使用sqlite，需要先建一个帮助类在完成数据库的创建和打开，管理。然后通过getWritableDatabase()获取数据库，然后对其进行增删改查操作。"></a>总的来说，在android中使用sqlite，需要先建一个帮助类在完成数据库的创建和打开，管理。然后通过getWritableDatabase()获取数据库，然后对其进行增删改查操作。</h5><hr>
-<ul>
-<li>sqlite相关知识来源于菜鸟教程：<a href="http://www.runoob.com/sql/sql-tutorial.html" title="菜鸟教程" target="_blank" rel="external">http://www.runoob.com/sql/sql-tutorial.html</a></li>
-<li>文中的英文解释皆出自官方文档</li>
-</ul>
-
-          
+新建一个项目，同时新建一个类MyOpen
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/07/30/Sqlite/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1030,14 +904,32 @@ public View getView(int position, View convertView, ViewGroup parent) {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -1045,6 +937,35 @@ public View getView(int position, View convertView, ViewGroup parent) {
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yangyouqian" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/yang-huan-shi-you-qian-xiao-bai/activities" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-zhihu"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://juejin.im/user/58e1f17261ff4b0061724b3b" target="_blank" title="掘金">
+                  
+                    <i class="fa fa-fw fa-juejin"></i>
+                  
+                  掘金
+                </a>
+              </span>
+            
           
         </div>
 
