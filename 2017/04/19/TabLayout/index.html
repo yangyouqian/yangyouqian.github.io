@@ -99,7 +99,7 @@
 <meta property="og:description" content="是什么 TabLayout provides a horizontal layout to display tabs.  Tablayout提供横向布局显示标签。通常与ViewPager一起使用。它的可使用范围很广泛，在很多应用中都有使用，如上图是掘金的首页界面，红框1和2中的内容都可以用Tablayout+Viewpager实现。 怎么使用首先需要在gradle文件中添加依赖: compile">
 <meta property="og:image" content="http://i.imgur.com/HmpXeg8.jpg">
 <meta property="og:image" content="http://i.imgur.com/nf7nRJY.jpg">
-<meta property="og:updated_time" content="2017-04-20T13:17:06.550Z">
+<meta property="og:updated_time" content="2017-04-20T14:43:46.631Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TabLayout">
 <meta name="twitter:description" content="是什么 TabLayout provides a horizontal layout to display tabs.  Tablayout提供横向布局显示标签。通常与ViewPager一起使用。它的可使用范围很广泛，在很多应用中都有使用，如上图是掘金的首页界面，红框1和2中的内容都可以用Tablayout+Viewpager实现。 怎么使用首先需要在gradle文件中添加依赖: compile">
@@ -423,6 +423,7 @@ android:layout_height=&quot;wrap_content&quot;&gt;
         android:layout_height=&quot;wrap_content&quot;
         android:icon=&quot;@mipmap/ic_launcher&quot;/&gt;
 &lt;/android.support.design.widget.TabLayout&gt;
+
 //tabitem的布局
 &lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
 android:layout_width=&quot;match_parent&quot;
@@ -441,10 +442,12 @@ android:layout_height=&quot;match_parent&quot;&gt;
         android:layout_centerInParent=&quot;true&quot;
         android:layout_toLeftOf=&quot;@id/tv&quot;/&gt;
 &lt;/RelativeLayout&gt;
-</code></pre><p>预览图<br><img src="http://i.imgur.com/nf7nRJY.jpg" alt="预览图"></p>
+</code></pre><p>预览图</p>
 </li>
-<li><p>监听方法：setOnTabSelectedListener(),<br>但是这个方法在 API level 24.0.0已被弃用，替代的是addOnTabSelectedListener ，只是当这个监听方法用完之后需要用removeOnTabSelectedListener方法删除监听。</p>
-</li>
+</ul>
+<p><img src="http://i.imgur.com/nf7nRJY.jpg" alt="预览图"></p>
+<ul>
+<li>监听方法：setOnTabSelectedListener(),<br>但是这个方法在 API level 24.0.0已被弃用，替代的是addOnTabSelectedListener ，只是当这个监听方法用完之后需要用removeOnTabSelectedListener方法删除监听。<h3 id="与ViewPager的爱情故事"><a href="#与ViewPager的爱情故事" class="headerlink" title="与ViewPager的爱情故事"></a>与ViewPager的爱情故事</h3></li>
 </ul>
 
       
@@ -487,6 +490,10 @@ android:layout_height=&quot;match_parent&quot;&gt;
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/20/一些有用的东西/" rel="next" title="一些有用的东西">
+                <i class="fa fa-chevron-left"></i> 一些有用的东西
+              </a>
             
           </div>
 
@@ -568,7 +575,7 @@ android:layout_height=&quot;match_parent&quot;&gt;
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -590,7 +597,7 @@ android:layout_height=&quot;match_parent&quot;&gt;
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -654,7 +661,7 @@ android:layout_height=&quot;match_parent&quot;&gt;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#是什么"><span class="nav-number">1.</span> <span class="nav-text">是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎么使用"><span class="nav-number">2.</span> <span class="nav-text">怎么使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#需要知道的一些使用方法"><span class="nav-number">2.1.</span> <span class="nav-text">需要知道的一些使用方法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#是什么"><span class="nav-number">1.</span> <span class="nav-text">是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎么使用"><span class="nav-number">2.</span> <span class="nav-text">怎么使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#需要知道的一些使用方法"><span class="nav-number">2.1.</span> <span class="nav-text">需要知道的一些使用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#与ViewPager的爱情故事"><span class="nav-number">2.2.</span> <span class="nav-text">与ViewPager的爱情故事</span></a></li></ol></li></ol></div>
             
 
           </div>
