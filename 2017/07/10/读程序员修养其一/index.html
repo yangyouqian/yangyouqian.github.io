@@ -99,7 +99,7 @@
 <meta property="og:description" content="最近在看GitBook上的程序员的自我修养，在读第一章的字符编码时，参考资料里的字符编码常识及问题解析 这篇博客里有个不是很理解的地方,记录下来，顺便做个读书笔记。  文章大致讲了些字符编码常识和Unicode与UTF-8之间的关系。 常识 位与字节 位：（bit）是指计算机里存放的二进制值(0/1) 字节：8个二进制位组合成的“位串”称为一个字节 我的补充：1位十六进制等于4位二进制，例如 十">
 <meta property="og:image" content="http://i.imgur.com/rAkFixE.png">
 <meta property="og:image" content="http://i.imgur.com/p5OLmSv.png">
-<meta property="og:updated_time" content="2017-07-10T02:54:37.785Z">
+<meta property="og:updated_time" content="2017-07-10T03:59:54.583Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="理解《程序员修养》其一">
 <meta name="twitter:description" content="最近在看GitBook上的程序员的自我修养，在读第一章的字符编码时，参考资料里的字符编码常识及问题解析 这篇博客里有个不是很理解的地方,记录下来，顺便做个读书笔记。  文章大致讲了些字符编码常识和Unicode与UTF-8之间的关系。 常识 位与字节 位：（bit）是指计算机里存放的二进制值(0/1) 字节：8个二进制位组合成的“位串”称为一个字节 我的补充：1位十六进制等于4位二进制，例如 十">
@@ -422,23 +422,29 @@
 <p>这里虽然起标题是叫拉丁编码，但是文中却没有指出拉丁编码是什么，是给拉丁字符进行编码的规则咩？</p>
 <ol>
 <li>中文编码<br><img src="http://i.imgur.com/rAkFixE.png" alt=""></li>
-<li>Unicode<ul>
+<li><p>Unicode</p>
+<ul>
 <li>全世界字符统一的一种编码。<strong>批注</strong>：那篇博客说Unicode采用4个字节表示一个字符，但是我查阅资料的时候，看到有说Unicode采用2个字节表示一个字符，然后才知道<strong>Unicode也是有不同规范的，而UCS-2采用的是两个字节来编码一个字符，Unicode目前普遍采用的是UCS-2</strong>。但是汉字太多两个字节表示不了，为了能表示所有汉字，Unicode也有UCS-4规范，<strong>UCS-4采用四个字节来编码一个字符</strong></li>
+<li><p>例如：</p>
+<pre><code>微 &lt;-&gt;  \u5fae   &lt;-&gt;  00000000 00000000 01011111 10101110
+  信 &lt;-&gt; \u4fe1   &lt;-&gt;  00000000 00000000 01001111 11100001
+</code></pre></li>
+<li><p>Unicode编码的<strong>问题</strong>：<em>Unicode对所有的字符编码均需要四个字节，而这对于拉丁字母或汉字来说其前面三个或两个字节均是0,</em>  （原文是这样说的，但是就像上面说的那样Unicode不是均采用4个字节的），这<strong>对信息存储来说是极大的浪费</strong>。另外一个问题就是，如何区分Unicode与其它编码这也是一个问题，比如计算机怎么知道四个字节表示一个Unicode中的字符，还是分别表示四个ASCII的字符呢？</p>
+</li>
+<li>于是就有了<strong>UTF-8</strong>编码，<strong>UTF-8是Unicode的一种实现方式</strong>，Unicode的实现方式除了UTF-8还有其它的，比如UTF-16，UTF-32。<ul>
+<li><strong>UTF-8使用一至四个字节为每个字符编码</strong></li>
+<li><strong>UTF-16使用两个字节编码</strong></li>
+<li><strong>UTF-32使用四个字节编码</strong></li>
+</ul>
+</li>
+<li>UTF-8的编码规则：<ul>
+<li>规则1：对于单字节字符，字节的第一位为0，后7位为这个符号的Unicode码，所以对于拉丁字母，UTF-8与ASCII码是一致的。</li>
+<li>规则2：对于n字节(n&gt;1)的字符，第一个字节前n位都设为1，第n+1位为0，后面字节的前两位一律设为10，剩下没有提及的位，全部为这个符号的Unicode编码。<br><img src="http://i.imgur.com/p5OLmSv.png" alt=""></li>
+</ul>
+</li>
 </ul>
 </li>
 </ol>
-<pre><code>        例如：
-        微 &lt;-&gt;  \u5fae   &lt;-&gt;  00000000 00000000 01011111 10101110
-        信 &lt;-&gt; \u4fe1   &lt;-&gt;  00000000 00000000 01001111 11100001
-* Unicode编码的**问题**：*Unicode对所有的字符编码均需要四个字节，而这对于拉丁字母或汉字来说其前面三个或两个字节均是0,*  （原文是这样说的，但是就像上面说的那样Unicode不是均采用4个字节的），这**对信息存储来说是极大的浪费**。另外一个问题就是，如何区分Unicode与其它编码这也是一个问题，比如计算机怎么知道四个字节表示一个Unicode中的字符，还是分别表示四个ASCII的字符呢？
-* 于是就有了**UTF-8**编码，**UTF-8是Unicode的一种实现方式**，Unicode的实现方式除了UTF-8还有其它的，比如UTF-16，UTF-32。
-    * **UTF-8使用一至四个字节为每个字符编码**
-    * **UTF-16使用两个字节编码**
-    * **UTF-32使用四个字节编码**
-* UTF-8的编码规则：
-    * 规则1：对于单字节字符，字节的第一位为0，后7位为这个符号的Unicode码，所以对于拉丁字母，UTF-8与ASCII码是一致的。
-    * 规则2：对于n字节(n&gt;1)的字符，第一个字节前n位都设为1，第n+1位为0，后面字节的前两位一律设为10，剩下没有提及的位，全部为这个符号的Unicode编码。
-</code></pre><p><img src="http://i.imgur.com/p5OLmSv.png" alt=""></p>
 <p>例如：</p>
 <pre><code>’微’的Unicode是’\u5fae’，
 二进制表示是”00000000 00000000 01011111 10101110“，
