@@ -99,7 +99,7 @@
 <meta property="og:description" content="最近在看GitBook上的程序员的自我修养，在读第一章的字符编码时，参考资料里的字符编码常识及问题解析 这篇博客里有个不是很理解的地方,记录下来，顺便做个读书笔记。  文章大致讲了些字符编码常识和Unicode与UTF-8之间的关系。 常识 位与字节 位：（bit）是指计算机里存放的二进制值(0/1) 字节：8个二进制位组合成的“位串”称为一个字节 我的补充：1位十六进制等于4位二进制，例如 十">
 <meta property="og:image" content="http://i.imgur.com/rAkFixE.png">
 <meta property="og:image" content="http://i.imgur.com/p5OLmSv.png">
-<meta property="og:updated_time" content="2017-07-10T03:59:54.583Z">
+<meta property="og:updated_time" content="2017-07-10T04:46:04.199Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="理解《程序员修养》其一">
 <meta name="twitter:description" content="最近在看GitBook上的程序员的自我修养，在读第一章的字符编码时，参考资料里的字符编码常识及问题解析 这篇博客里有个不是很理解的地方,记录下来，顺便做个读书笔记。  文章大致讲了些字符编码常识和Unicode与UTF-8之间的关系。 常识 位与字节 位：（bit）是指计算机里存放的二进制值(0/1) 字节：8个二进制位组合成的“位串”称为一个字节 我的补充：1位十六进制等于4位二进制，例如 十">
@@ -402,25 +402,19 @@
 <li>我的补充：1位十六进制等于4位二进制，例如 十六进制 F= 二进制1111。一个字节等于2位十六进制。</li>
 </ul>
 </li>
-</ol>
-<ul>
 <li>拉丁字符<ul>
 <li><strong>基础拉丁字母</strong>：指常见的”ABCD“等26个英文字母</li>
 <li><strong>基础拉丁字符</strong>：基础拉丁字母和英语中一些常见的符号（如数字，标点符号）</li>
 <li>派生拉丁字母：在欧洲其它一些非英语国家，为满足其语言需要，在基础拉丁字符的基础上，加上一些连字符，变音字符(如’Á’)。</li>
 </ul>
 </li>
-</ul>
+</ol>
 <h3 id="编码标准"><a href="#编码标准" class="headerlink" title="编码标准"></a>编码标准</h3><ol>
-<li><p>拉丁编码</p>
-<ul>
+<li>拉丁编码<ul>
 <li><strong>ASCII</strong>：美国信息交换标准代码（American Standard Code for Information Interchange）。ASCII编码只支持基础拉丁字符，用一个字节（8个位）来表示一个字符，并保证最高位的取值永远为’0’。</li>
 <li><strong>ISO 8859</strong>：对ASCII字节的第八位进行拓展编码，即其0000000(0x00)-01111111(0x7f)范围段与ASCII保持一致，而10000000（0x80）-11111111(0xFF)范围段被扩展用到不同的字符集，ISO 8859-n与ASCII是兼容的。</li>
 </ul>
 </li>
-</ol>
-<p>这里虽然起标题是叫拉丁编码，但是文中却没有指出拉丁编码是什么，是给拉丁字符进行编码的规则咩？</p>
-<ol>
 <li>中文编码<br><img src="http://i.imgur.com/rAkFixE.png" alt=""></li>
 <li><p>Unicode</p>
 <ul>
